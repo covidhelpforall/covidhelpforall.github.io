@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>COVID HELP - Varanasi</title>
+    <title>COVID HELP - Nashik</title>
 
     <style type="text/css">
 			table {
@@ -44,7 +44,7 @@
     <link href="css/styles.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-	<h1><u>COVID HELP - Varanasi</u></h1> 
+	<h1><u>COVID HELP - Nashik</u></h1> 
 	<h2>What do you need ?</h2>
 	
 	<table>
