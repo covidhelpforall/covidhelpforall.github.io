@@ -88,9 +88,8 @@
 	
 	
 	
-	<h2>How can you help?</h2>
-		<h2>Please fill the form if you can help us:
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVt8N4EFYK88qE-Bp4GI9w7VIYFjZImAn0HJv6isk89jQLDA/viewform?usp=send_form"><b>    FORM   </b></a></h2>
+		<p>Feedback - contactusforhelp.lucknow@gmail.com</p>
+
 	
 	<br><a href="terms.html">Terms of use</a>
 	
