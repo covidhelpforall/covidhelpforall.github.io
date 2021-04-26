@@ -1,0 +1,303 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+
+#Home {background-color: red;}
+#City {background-color: green;}
+#State {background-color: blue;}
+#India {background-color: orange;}
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+<button class="tablink" onclick="openPage('City', this, 'green')" id="defaultOpen">City</button>
+<button class="tablink" onclick="openPage('State', this, 'blue')">State</button>
+<button class="tablink" onclick="openPage('India', this, 'orange')">India</button>
+
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <p>Home is where the heart is..</p>
+</div>
+
+<div id="City" class="tabcontent">
+  <h3>Select City</h3> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style> 
+
+<p>Move the mouse over the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+  <button class="dropbtn">Pune</button>
+  <div class="dropdown-content">
+    <a href="https://covidpune.com/">Bed Availability</a>
+    <a href="https://covidpune.com/plasma">Blood Plasma</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+
+
+<div class="dropdown">
+  <button class="dropbtn">Delhi</button>
+  <div class="dropdown-content">
+    <a href="https://coronabeds.jantasamvad.org/">Bed Availability</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Bangalore</button>
+  <div class="dropdown-content">
+    <a href="https://coronabeds.jantasamvad.org/">Bed Availability</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+</div>
+
+<div id="State" class="tabcontent">
+  <h3>Select State</h3>
+   <h3>Select City</h3> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style> 
+
+<p>Move the mouse over the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+  <button class="dropbtn">Pune</button>
+  <div class="dropdown-content">
+    <a href="https://covidpune.com/">Bed Availability</a>
+    <a href="https://covidpune.com/plasma">Blood Plasma</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+
+
+<div class="dropdown">
+  <button class="dropbtn">Delhi</button>
+  <div class="dropdown-content">
+    <a href="https://coronabeds.jantasamvad.org/">Bed Availability</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Bangalore</button>
+  <div class="dropdown-content">
+    <a href="https://coronabeds.jantasamvad.org/">Bed Availability</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+</div>
+
+ 
+</div>
+
+<div id="India" class="tabcontent">
+  <h3>Select Resource</h3>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style> 
+
+<p>Move the mouse over the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+  <button class="dropbtn">Plasma: Donor/Recipient</button>
+  <div class="dropdown-content">
+    <a href="https://www.dhoondh.com/">Dhoondh</a>
+    <a href="https://plasmadonor.in/">Plasma Donor</a>
+    <a href="https://needplasma.in/">Need Plasma</a>
+    <a href="https://plasmaline.in/">Plasma Line</a>
+    <a href="https://docs.google.com/forms/d/1koxfezyOV5OLwz3ssUstc1jogOMVjwvhoxPWK0diqg0/viewform?edit_requested=true">Covid19 Plasma Donor-Recipient Help India Group</a>
+    <a href="https://workflow-au.signavio.com/public/start-form/5ef82fc63623895e0219860a">KAB Welfare Foundation</a>
+    
+    <a href="https://pintnetwork.com/home">Plasma In Need for Transfusion (PINT) Network</a>
+    <a href="https://needplasma.in/">Need Plasma</a>
+    
+  </div>
+</div>
+
+
+<div class="dropdown">
+  <button class="dropbtn">Tiffin Services</button>
+  <div class="dropdown-content">
+    <a href="https://covidmealsforindia.com/">Covid Meals For India</a>
+    <a href="https://twitter.com/Bigfatbite">Big Fat Bite</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Bed Availability</button>
+  <div class="dropdown-content">
+    <a href="https://covidbedsindia.in/">Covid Beds India</a>
+   
+  </div>
+</div>
+</div>
+
+  
+  <p>Who we are and what we do.</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
