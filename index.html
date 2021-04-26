@@ -1,221 +1,442 @@
+<!DOCTYPE html>
 <html>
-	
-
-	<head>
-	  <title>COVID HELP FOR ALL</title>
-		    <link href="css/styles.css" type="text/css" rel="stylesheet" />
-	<style>
-		body{ font-size: 32px;
-		}
-		
-		
-		h5 {
-	  font-size: 20px;
-	}
-		</style>
-	<!-- ***********************************************************
-</head> *************** -->
-	  
-	<body>
-	  
-	  	<h1><u>COVID HELP FOR ALL</u></h1> 
-	
-
-	<div font-size=32px>
-
-		
-	<br>
-<!-- ************************************************************************** -->
-		
-<h2> <u> City Wise Resources </u> </h2>
-
-<div class="dropdown">
-  <button onclick="myFunctioncity()" class="dropbtn">Click here to select City</button>
-  <div id="myDropdowncity" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    <a href="delhi.html">Delhi/Ncr</a>
-    <a href="bangalore.html">Bengaluru</a>
-    <a href="https://covidpune.com/">Pune</a>
-  
-  </div>
-	<script>
-			/* When the user clicks on the button,
-			toggle between hiding and showing the dropdown content */
-			function myFunctioncity() {
-			  document.getElementById("myDropdowncity").classList.toggle("show");
-			}
-
-			function filterFunction() {
-			  var input, filter, ul, li, a, i;
-			  input = document.getElementById("myInput");
-			  filter = input.value.toUpperCase();
-			  div = document.getElementById("myDropdowncity");
-			  a = div.getElementsByTagName("a");
-			  for (i = 0; i < a.length; i++) {
-			    txtValue = a[i].textContent || a[i].innerText;
-			    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-			      a[i].style.display = "";
-			    } else {
-			      a[i].style.display = "none";
-			    }
-			  }
-			}
-			</script>
-	
-<h2> <u> State wise Resources </u> </h2>
-	
-<div class="dropdown">
-  <button onclick="myFunctionstate()" class="dropbtn">Click here to select State</button>
-  <div id="myDropdownstate" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    <a href="up.html">Uttar Pradesh</a>
-    <a href="mp.html">Madhya Pradesh</a>
-    <a href="maha.html">Maharashtra</a>
-  
-  </div>
-	<script>
-			/* When the user clicks on the button,
-			toggle between hiding and showing the dropdown content */
-			function myFunctionstate() {
-			  document.getElementById("myDropdownstate").classList.toggle("show");
-			}
-
-			function filterFunction() {
-			  var input, filter, ul, li, a, i;
-			  input = document.getElementById("myInput");
-			  filter = input.value.toUpperCase();
-			  div = document.getElementById("myDropdownstate");
-			  a = div.getElementsByTagName("a");
-			  for (i = 0; i < a.length; i++) {
-			    txtValue = a[i].textContent || a[i].innerText;
-			    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-			      a[i].style.display = "";
-			    } else {
-			      a[i].style.display = "none";
-			    }
-			  }
-			}
-			</script>
-	
-	
-<!-- ************************************************************************** -->
-
-<h2> <u> Pan India Covid Resources </u> </h2>
-		
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
 
-		
-		<style>
-			.dropbtn {
-			  background-color: #4CAF50;
-			  color: white;
-			  padding: 16px;
-			  font-size: 16px;
-			  border: none;
-			  cursor: pointer;
-			}
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
 
-			.dropbtn:hover, .dropbtn:focus {
-			  background-color: #3e8e41;
-			}
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
 
-			#myInput {
-			  box-sizing: border-box;
-			  background-image: url('searchicon.png');
-			  background-position: 14px 12px;
-			  background-repeat: no-repeat;
-			  font-size: 16px;
-			  padding: 14px 20px 12px 45px;
-			  border: none;
-			  border-bottom: 1px solid #ddd;
-			}
+.tablink:hover {
+  background-color: #777;
+}
 
-			#myInput:focus {outline: 3px solid #ddd;}
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
 
-			.dropdown {
-			  position: relative;
-			  display: inline-block;
-			}
 
-			.dropdown-content {
-			  display: none;
-			  position: absolute;
-			  background-color: #f6f6f6;
-			  min-width: 230px;
-			  overflow: auto;
-			  border: 1px solid #ddd;
-			  z-index: 1;
-			}
-
-			.dropdown-content a {
-			  color: black;
-			  padding: 12px 16px;
-			  text-decoration: none;
-			  display: block;
-			}
-
-			.dropdown a:hover {background-color: #ddd;}
-
-			.show {display: block;}
-		</style>
+#Home {background-color: red;}
+#City {background-color: green;}
+#State {background-color: blue;}
+#India {background-color: orange;}
+</style>
 </head>
 <body>
 
+<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+<button class="tablink" onclick="openPage('City', this, 'green')" id="defaultOpen">City</button>
+<button class="tablink" onclick="openPage('State', this, 'blue')">State</button>
+<button class="tablink" onclick="openPage('India', this, 'orange')">India</button>
 
+<div id="Home" class="tabcontent">
+  <h2>Covid Help For All</h2>
+  Disclaimer - We do not claim to own any information presented on this website. This website has only got to do with presentation of data in a consolidated way. Please use the contacts/information provided here at your own risk. 
+  
+  <p></p>
+</div>
+
+<div id="City" class="tabcontent">
+  <h3>Select City</h3> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style> 
+
+<p>Move the mouse over the button to open the dropdown menu.</p>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Pune</button>
+  <div class="dropdown-content">
+    <a href="https://covidpune.com/">Bed Availability-Link 1</a>
+    <a href="https://www.divcommpunecovid.com/ccsbeddashboard/hsr">Bed Availability-Link 2</a>
+    <a href="https://covidpune.com/plasma">Blood Plasma</a>
+    <a href="https://covidpune.com/ratc">Rapid Antigen Test Centre</a>
+    <a href="https://covidpune.com/ambulance">Ambulance</a>
+    <a href="https://covidpune.com/helpline">24*7 Helpline</a>
+    <a href="https://covidpune.com/remdesivir">Remdesivir</a>
+    <a href="https://covidpune.com/food">Tiffin/Food</a>
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Ahmedabad</button>
+  <div class="dropdown-content">
+    <a href="https://ahna.org.in/covid19.html">Bed Availability-Link 1</a>
+    <a href="https://covidamd.com/">Bed Availability-Link 2</a>
+    <a href="https://covidamd.com/plasma">Plasma Availability</a>
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Bhopal</button>
+  <div class="dropdown-content">
+    <a href="https://bhopalcovidbeds.in/">Bed Availability</a>
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Nashik</button>
+  <div class="dropdown-content">
+    <a href="http://covidcbrs.nmc.gov.in/home/hospitalSummary">Bed Availability-Link 1</a>
+    <a href="https://covidnashik.com/">Bed Availability-Link 2</a>
+    <a href="https://covidnashik.com/plasma">Plasma Availability</a>
+    <a href="https://covidnashik.com/ambulance">Ambulance</a>
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Vadodara/Baroda</button>
+  <div class="dropdown-content">
+    <a href="https://vmc.gov.in/Covid19VadodaraApp/Default.aspx">Bed Availability-Link 1</a>
+    <a href="https://covidbaroda.com/">Bed Availability-Link 2</a>
+    <a href="https://covidbaroda.com/plasma">Plasma Availability</a>
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Thane</button>
+  <div class="dropdown-content">
+    <a href="https://covidbedthane.in/HospitalInfo/showindex">Bed Availability</a>
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Beed</button>
+  <div class="dropdown-content">
+    <a href="https://covidbeed.com/">Bed Availability</a>
+     <a href="https://covidbeed.com/plasma">Plasma Availability</a>
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Nagpur</button>
+  <div class="dropdown-content">
+    <a href="http://nsscdcl.org/covidbeds/AvailableHospitals.jsp">Bed Availability-Link 1</a>
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Mumbai</button>
+  <div class="dropdown-content">
+    <a href="https://www.nmmchealthfacilities.com/HospitalInfo/showhospitalist">Navi-Mumbai: Bed Availability</a>
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Delhi</button>
+  <div class="dropdown-content">
+    <a href="https://coronabeds.jantasamvad.org/">Bed Availability-Link 1</a>
+    <a href="https://coviddelhi.com/">Bed Availability-Link 2</a>
+    <a href="https://coviddelhi.com/plasma">Plasma Availability</a>
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Surat</button>
+  <div class="dropdown-content">
+    <a href="http://office.suratsmartcity.com/SuratCOVID19/Home/COVID19BedAvailabilitydetails">Bed Availability</a>
+ </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Jaipur</button>
+  <div class="dropdown-content">
+    <a href="https://covidinfo.rajasthan.gov.in/Covid19BedsStatusJaipur.aspx">Bed Availability</a>
+ </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Gandhinagar</button>
+  <div class="dropdown-content">
+    <a href="https://covidgandhinagar.com/">Bed Availability</a>
+    <a href="https://covidgandhinagar.com/plasma">Plasma Availability</a>
+ </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Bangalore</button>
+  <div class="dropdown-content">
+    <a href="https://covidbengaluru.com/">Bed Availability-Link 1</a>
+    <a href="#">Bed Availability-Link 2</a>
+    <a href="https://covidbengaluru.com/plasma">Plasma Availability</a>
+  </div>
+</div>
+</div>
+<!-- ************************************************************************** -->
+
+<div id="State" class="tabcontent">
+  <h3>Select State</h3> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style> 
+
+<p>Move the mouse over the button to open the dropdown menu.</p>
 
 <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Click here to select Resource</button>
-  <div id="myDropdown" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    <a href="https://docs.google.com/document/d/14lX2iugOG0oZpwQJHsKg4wy5TRWXkNThvU1gC9SHpdA/edit?usp=sharing">Blood Plasma</a>
-    <a href="https://covidmealsforindia.com/">Covid Meals For India</a>
-    <a href="https://covidbedsindia.in/">Bed Availability</a>
-  
+  <button class="dropbtn">Telangana</button>
+  <div class="dropdown-content">
+    <a href="http://164.100.112.24/SpringMVC/Hospital_Beds_Statistic_Bulletin_citizen.htm">Covid Bed Availability- Link 1</a>
+    <a href="https://covidtelangana.com/">Covid Bed Availability- Link 2</a>
+    <a href="https://covidtelangana.com/plasma">Plasma Availability</a>
   </div>
 </div>
 
-			<script>
-			/* When the user clicks on the button,
-			toggle between hiding and showing the dropdown content */
-			function myFunction() {
-			  document.getElementById("myDropdown").classList.toggle("show");
-			}
 
-			function filterFunction() {
-			  var input, filter, ul, li, a, i;
-			  input = document.getElementById("myInput");
-			  filter = input.value.toUpperCase();
-			  div = document.getElementById("myDropdown");
-			  a = div.getElementsByTagName("a");
-			  for (i = 0; i < a.length; i++) {
-			    txtValue = a[i].textContent || a[i].innerText;
-			    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-			      a[i].style.display = "";
-			    } else {
-			      a[i].style.display = "none";
-			    }
-			  }
-			}
-			</script>
-	
+
+<div class="dropdown">
+  <button class="dropbtn">Rajasthan</button>
+  <div class="dropdown-content">
+<a href="https://covidinfo.rajasthan.gov.in/COVID19HOSPITALBEDSSTATUSSTATE.aspx">Covid Bed Availability</a>
+  </div>
+</div>
 <!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Andhra Pradesh</button>
+  <div class="dropdown-content">
+    <a href="http://dashboard.covid19.ap.gov.in/ims/hospbed_reports/">Covid Bed Availability</a>   
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Tamil Nadu</button>
+  <div class="dropdown-content">
+    <a href="https://stopcorona.tn.gov.in/beds.php">Covid Bed Availability-Link 1</a>
+    <a href="https://covidtnadu.com/">Covid Bed Availability-Link 2</a>
+    <a href="https://covidtnadu.com/plasma">Plasma Availability</a>
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">West Bengal</button>
+  <div class="dropdown-content">
+    <a href="https://covidwb.com/">Covid Bed Availability</a>
+    <a href="https://covidwb.com/plasma"> Plasma Availability </a>   
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Madhya Pradesh</button>
+  <div class="dropdown-content">
+    <a href="https://covidmp.com/">Covid Bed Availability-Link 1</a>
+    <a href="https://covidmp.com/plasma"> Plasma Availability </a> 
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Chattisgarh</button>
+  <div class="dropdown-content">
+    <a href="https://covidcgh.com/">Covid Bed Availability</a>
+    <a href="https://covidmp.com/plasma"> Plasma Availability </a>
+   
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Haryana</button>
+  <div class="dropdown-content">
+    <a href="https://coronaharyana.in/">Covid Bed Availability</a>
+   
+  </div>
+</div>
+</div> 
+</div>
+<!-- ************************************************************************** -->
+<div id="India" class="tabcontent">
+  <h3>Select Resource</h3>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
 
-	</body>
-	</div>
-	
-		
-		
-		
-		
-		
-		<br>
-	<p>Feedback - contactusforhelp.lucknow@gmail.com</p>
-		<a href="test1.html">Test</a>
-		
-	</html>
-	<br>
-		<footer>We do not claim to own any information presented here, this website has only got to do with presentation of data in a consolidated way. </footer>
+.dropdown-content a:hover {background-color: #ddd;}
 
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style> 
+
+<p>Move the mouse over the button to open the dropdown menu.</p>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Plasma: Donor/Recipient</button>
+  <div class="dropdown-content">
+    <a href="https://www.dhoondh.com/">Dhoondh</a>
+    <a href="https://plasmadonor.in/">Plasma Donor</a>
+    <a href="https://needplasma.in/">Need Plasma</a>
+    <a href="https://plasmaline.in/">Plasma Line</a>
+    <a href="https://docs.google.com/forms/d/1koxfezyOV5OLwz3ssUstc1jogOMVjwvhoxPWK0diqg0/viewform?edit_requested=true">Covid19 Plasma Donor-Recipient Help India Group</a>
+    <a href="https://workflow-au.signavio.com/public/start-form/5ef82fc63623895e0219860a">KAB Welfare Foundation</a>
+    
+    <a href="https://pintnetwork.com/home">Plasma In Need for Transfusion (PINT) Network</a>
+    <a href="https://www.simplyblood.com/">Simply Blood</a>
+    <a href="https://www.teamsosindia.in/">Team SOS India</a>
+    <a href="https://givered.in/">Give Red</a>
+    <a href="https://indiaplasmadonor.com/">India Plasma Donor</a>
+    <a href="https://www.plasmafinder.com/">Plasma Finder</a>
+    <a href="https://covidindiacampaign.org/">Covid India Campaign</a>
+    <a>Panthak Saanjh<ul><li>Sunny Khera: +91-9999992492</li>
+                         <li>Gurbrinder Singh: +91-9958525752 </li>
+                         <li>Gurjot Singh: +91-9953019389 </li></ul> </a>
+    <a>NDTV plasma donation initiative <ul><li>  Email: feedback@ndtv.com </li>
+                           <li> WhatsApp : 9910668811 </li>
+                         </ul> </a> 
+  </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Tiffin Services</button>
+  <div class="dropdown-content">
+    <a href="https://covidmealsforindia.com/">Covid Meals For India</a>
+    <a href="https://twitter.com/Bigfatbite">Big Fat Bite</a>
+   </div>
+</div>
+<!-- ************************************************************************** -->
+<div class="dropdown">
+  <button class="dropbtn">Bed Availability</button>
+  <div class="dropdown-content">
+    <a href="https://covidbedsindia.in/">Covid Beds India</a>   
+  </div>
+</div>
+</div>
+<!-- ************************************************************************** -->
+  
+  <p>Who we are and what we do.</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html>
